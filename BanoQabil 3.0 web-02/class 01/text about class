@@ -1,0 +1,8 @@
+in this class we first setup our Environment by peforming these steps:
+. cmd
+. npm install --global yarn
+. yarn -v
+. yarn create vite folder-name --template react
+. cd folder-name
+- yarn
+. yarn dev
