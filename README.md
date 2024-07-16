@@ -1,2 +1,2 @@
 # BanoQabil
-This Repo is consisting code and learning material from BanoQabil.
+Th9is repo Contains all the content from BanoQabil
