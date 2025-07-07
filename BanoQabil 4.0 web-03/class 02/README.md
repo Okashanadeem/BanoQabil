@@ -1,26 +1,23 @@
-````markdown
-# Class 2: JavaScript Refresher
+# 📚 Class 2: JavaScript Refresher
 
-This session provided a powerful refresher on JavaScript fundamentals, preparing us for backend development with Node.js. We learned how JavaScript works under the hood, key concepts in asynchronous programming, object-oriented patterns, and much more.
+This session provided a powerful refresher on JavaScript fundamentals to prepare us for backend development with Node.js. We explored how JavaScript works under the hood, asynchronous programming concepts, object-oriented patterns, and more.
 
 ---
 
 ## 🧠 What We Learned
 
-### 🔸 Why JavaScript?
+### 🔹 Why JavaScript?
 
 - ✅ Runs on both frontend (browser) and backend (Node.js)
 - ✅ Universal language for full-stack development
-- ✅ Event-driven, asynchronous by design
+- ✅ Event-driven and asynchronous by nature
 - ✅ Massive ecosystem (npm, frameworks, tools)
 
 ---
 
-## 🔹 JavaScript Engine Basics
+## ⚙️ JavaScript Engine Basics
 
 JavaScript is a **single-threaded**, **synchronous** language with **asynchronous capabilities** using the Event Loop and Call Stack.
-
-Example:
 
 ```js
 console.log("Start");
@@ -28,7 +25,7 @@ setTimeout(() => console.log("Delayed"), 1000);
 console.log("End");
 ````
 
-Output:
+**Output:**
 
 ```
 Start
@@ -36,17 +33,15 @@ End
 Delayed
 ```
 
-> JS runs synchronously, but offloads async operations like `setTimeout` or `fetch` to the Web API.
+> JavaScript runs code synchronously but delegates async operations like `setTimeout` or `fetch` to the Web API.
 
 ---
 
-## 🔹 Scopes & Hoisting
+## 🔐 Scopes & Hoisting
 
 * `let` and `const` → **block scoped**
-* `var` → **function scoped** (avoid it)
-* **Hoisting**: JS moves declarations to the top during compile phase.
-
-Example:
+* `var` → **function scoped** (⚠️ avoid using)
+* **Hoisting**: JavaScript moves declarations to the top during compilation.
 
 ```js
 console.log(x); // undefined
@@ -55,11 +50,11 @@ var x = 5;
 
 ---
 
-## 🔹 Data Types
+## 🔢 Data Types
 
 ### ✅ Primitive Types
 
-* `string`, `number`, `boolean`, `null`, `undefined`, `symbol`
+* `string`, `number`, `boolean`, `null`, `undefined`, `symbol`, `bigint`
 
 ### ✅ Reference Types
 
@@ -67,22 +62,22 @@ var x = 5;
 
 ---
 
-## 🔹 Variable Declaration
+## 🧾 Variable Declaration
 
-* `const`: Cannot be reassigned, but mutable for objects/arrays
+* `const`: Cannot be reassigned, but objects/arrays remain mutable.
 
-  ```js
-  const arr = [1, 2, 3];
-  arr.push(4); // ✅ OK
-  arr = [5, 6]; // ❌ Error
-  ```
+```js
+const arr = [1, 2, 3];
+arr.push(4);      // ✅ Allowed
+arr = [5, 6];     // ❌ Error
+```
 
 ---
 
-## 🔹 Functions vs Arrow Functions
+## 🔁 Functions vs Arrow Functions
 
-* Arrow functions do **not** bind `this`
-* Regular functions bind `this` to the caller context
+* Arrow functions do **not** bind their own `this`.
+* Regular functions bind `this` to the calling context.
 
 ```js
 const obj = {
@@ -96,9 +91,9 @@ obj.greet();
 
 ---
 
-## 🔹 Closures & Lexical Scope
+## 🔄 Closures & Lexical Scope
 
-Closures allow inner functions to "remember" variables from outer functions.
+Closures allow inner functions to access variables from outer functions, even after the outer function has finished executing.
 
 ```js
 function outer() {
@@ -115,9 +110,9 @@ inc(); // 2
 
 ---
 
-## 🔹 Useful Array Methods
+## 📚 Useful Array Methods
 
-### `map()`
+### `.map()`
 
 Transforms array items.
 
@@ -125,25 +120,25 @@ Transforms array items.
 [1, 2, 3].map(n => n * 2); // [2, 4, 6]
 ```
 
-### `filter()`
+### `.filter()`
 
-Filters items based on condition.
+Filters items based on a condition.
 
 ```js
 [1, 2, 3].filter(n => n > 1); // [2, 3]
 ```
 
-### `reduce()`
+### `.reduce()`
 
-Combines values into one.
+Combines array values into a single value.
 
 ```js
 [1, 2, 3].reduce((sum, n) => sum + n, 0); // 6
 ```
 
-### `sort()`
+### `.sort()`
 
-Sorts items.
+Sorts items numerically or alphabetically.
 
 ```js
 [5, 1, 4].sort((a, b) => a - b); // [1, 4, 5]
@@ -151,7 +146,7 @@ Sorts items.
 
 ---
 
-## 🔹 Destructuring, Spread & Rest
+## 🧰 Destructuring, Spread & Rest
 
 ```js
 const { name, ...rest } = { name: "Sara", age: 25 };
@@ -164,9 +159,9 @@ const clone = [...arr]; // [1, 2, 3]
 
 ---
 
-## 🔹 Async JavaScript: Promises & Async/Await
+## ⏳ Async JavaScript: Promises & Async/Await
 
-### Using Promises:
+### ✅ Using Promises
 
 ```js
 fetch(url)
@@ -175,7 +170,7 @@ fetch(url)
   .catch(err => console.error(err));
 ```
 
-### Using `async/await`:
+### ✅ Using Async/Await
 
 ```js
 async function fetchData() {
@@ -191,9 +186,9 @@ async function fetchData() {
 
 ---
 
-## 🔹 Classes and Prototypes
+## 🏛️ Classes and Prototypes
 
-JavaScript uses prototype-based inheritance under the hood, even in class syntax.
+JavaScript uses prototype-based inheritance under the hood, even when using class syntax.
 
 ```js
 class User {
@@ -204,43 +199,47 @@ class User {
     return `Hello ${this.name}`;
   }
 }
+
 const user = new User("Ali");
 console.log(user.greet()); // Hello Ali
 ```
 
 ---
 
-## 🔸 Common Built-in Functions
+## 🔧 Common Built-in Functions
 
 * `console.log()` → Print to console
-* `JSON.stringify()` → Convert object to JSON string
+* `JSON.stringify()` → Convert an object to a JSON string
+* `JSON.parse()` → Convert JSON string to object
+* `typeof` → Check data type
 
 ---
 
-## 📝 Quiz Topics (for 4th Class)
+## 📝 Quiz Topics (for Class 4)
 
-Make sure you review:
+Be ready to answer questions about:
 
-* Variable types & scopes
+* Variable types and scopes
 * Loops (`for`, `while`)
 * Callbacks & Promises
 * `async/await`
-* Algorithm-based logic questions
-* Array methods
+* Algorithmic logic
+* Array methods (`map`, `filter`, `reduce`, etc.)
 
 ---
 
-## ✅ Key Definitions
+## 📌 Key Definitions
 
-| Concept       | Meaning                                                                |
-| ------------- | ---------------------------------------------------------------------- |
-| Closure       | Function remembers its outer scope variables even after parent is done |
-| Lexical Scope | Scope defined by code position (where the function is written)         |
-| Prototype     | Inheritance chain used by JS objects and classes                       |
-| this          | Refers to current execution context, except in arrow functions         |
+| Concept           | Description                                                                |
+| ----------------- | -------------------------------------------------------------------------- |
+| **Closure**       | A function that remembers variables from its outer scope                   |
+| **Lexical Scope** | Scope determined by the location in the source code                        |
+| **Prototype**     | Mechanism through which JavaScript objects inherit features                |
+| **this**          | Refers to the current execution context (varies by how function is called) |
 
 ---
 
-📅 **Next Class Preview**:
-We will dive into **Node.js Basics** and solve logic-based and async programming problems.
+## 📅 Next Class Preview
+
+We will dive into **Node.js Basics** and solve logic-based and asynchronous programming problems.
 
